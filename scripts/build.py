@@ -87,32 +87,45 @@ def typing():
         "Two journal manuscripts on trustworthy simulated patients",
         "Open to research collaborations and internships",
     ]
-    W, H, fs, cw, per = 1200, 64, 22, 13.2, 5.0  # cw: monospace advance at 22px
+    # SMIL, not CSS: browsers that skip CSS geometry animation inside clipPath drew every line at once
+    W, H, cw, per, type_s, hold_s = 1200, 72, 12.0, 5.0, 2.0, 4.6  # cw: monospace advance at 20px
     T = per * len(lines)
-    css, body = [], []
+    prompt = "faaz@pune:~$"
+    x0 = 104 + (len(prompt) + 1) * cw
+
+    def anim(attr, pts, default):
+        pts = sorted(dict(pts).items())
+        if pts[0][0] > 0: pts.insert(0, (0, default))
+        keys = ";".join(f"{t / T:.4f}" for t, _ in pts)
+        vals = ";".join(f"{v:.0f}" for _, v in pts)
+        return (f'<animate attributeName="{attr}" dur="{T}s" repeatCount="indefinite" calcMode="discrete" '
+                f'keyTimes="{keys}" values="{vals}"/>')
+
+    body, caret = [], [(0, x0)]
     for i, ln in enumerate(lines):
-        w = len(ln) * cw
-        x0 = (W - w) / 2
-        a, type_end, hold, gone = (i * per / T * 100, (i * per + 2.0) / T * 100, (i * per + 4.2) / T * 100,
-                                   (i * per + 4.8) / T * 100)
-        steps = len(ln)
-        css.append(f"""@keyframes t{i} {{ 0%, {a:.2f}% {{ width: 0; opacity: 1; }} {type_end:.2f}% {{ width: {w + 2:.0f}px; }}
-          {hold:.2f}% {{ width: {w + 2:.0f}px; opacity: 1; }} {gone:.2f}%, 100% {{ width: 0; }} }}
-        @keyframes c{i} {{ 0% {{ opacity: 0; }} {max(a - 0.01, 0):.2f}% {{ opacity: 0; transform: translateX(0); }} {a:.2f}% {{ transform: translateX(0); opacity: 1; }} {type_end:.2f}% {{ transform: translateX({w + 4:.0f}px); }}
-          {hold:.2f}% {{ transform: translateX({w + 4:.0f}px); opacity: 1; }} {gone:.2f}%, 100% {{ opacity: 0; transform: translateX({w + 4:.0f}px); }} }}
-        .r{i} {{ animation: t{i} {T}s infinite; animation-timing-function: steps({steps}, end); width: 0; }}
-        .k{i} {{ animation: c{i} {T}s infinite; animation-timing-function: steps({steps}, end); opacity: 0; }}""")
-        body.append(f'<clipPath id="m{i}"><rect class="r{i}" x="{x0:.0f}" y="10" height="44"/></clipPath>'
-                    f'<text x="{x0:.0f}" y="40" class="t" clip-path="url(#m{i})">{escape(ln)}</text>'
-                    f'<rect class="k{i}" x="{x0:.0f}" y="18" width="11" height="28" fill="#3fd6bd"/>')
+        t0, n = i * per, len(ln)
+        pts = [(t0, 0)] + [(t0 + type_s * k / n, k * cw + 2) for k in range(1, n + 1)] + [(t0 + hold_s, 0)]
+        caret += [(t0 + type_s * k / n, x0 + k * cw + 2) for k in range(1, n + 1)] + [(t0 + hold_s, x0)]
+        still = n * cw + 2 if i == 0 else 0  # what shows where SVG animation doesn't run: the first line
+        body.append(f'<clipPath id="m{i}"><rect x="{x0:.0f}" y="14" height="44" width="{still:.0f}">'
+                    f'{anim("width", pts, 0)}</rect></clipPath>'
+                    f'<text x="{x0:.0f}" y="43" class="t" clip-path="url(#m{i})">{escape(ln)}</text>')
     write("typing.svg", f"""
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="{escape(' / '.join(lines))}">
+<defs><linearGradient id="ln" x1="0" x2="1"><stop offset="0" stop-color="#3fd6bd"/><stop offset="1" stop-color="#b388ff"/></linearGradient></defs>
 <style>
-  .t {{ font: 500 {fs}px {MONO}; fill: #3fd6bd; }}
-  {"".join(css)}
-  @media (prefers-reduced-motion: reduce) {{ * {{ animation: none !important; }} .r0 {{ width: 2000px; }} .k0 {{ opacity: 0; }} }}
+  .t {{ font: 500 20px {MONO}; fill: {INK}; }}
+  .p {{ font: 600 20px {MONO}; fill: #3fd6bd; }}
+  .caret {{ fill: #3fd6bd; animation: blink 1s steps(1) infinite; }} @keyframes blink {{ 50% {{ opacity: .15; }} }}
+  {CALM}
 </style>
+<rect width="{W}" height="{H}" rx="18" fill="{BG}"/>
+<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="18" fill="none" stroke="#ffffff" stroke-opacity=".1"/>
+<rect x="24" y="{H - 2}" width="{W - 48}" height="2" fill="url(#ln)" opacity=".7"/>
+<circle cx="32" cy="36" r="6" fill="#ff5f57" fill-opacity=".85"/><circle cx="54" cy="36" r="6" fill="#febc2e" fill-opacity=".85"/><circle cx="76" cy="36" r="6" fill="#28c840" fill-opacity=".85"/>
+<text x="104" y="43" class="p">{prompt}</text>
 {"".join(body)}
+<rect x="{x0 + len(lines[0]) * cw + 2:.0f}" y="22" width="11" height="28" class="caret">{anim("x", caret, x0)}</rect>
 </svg>""")
 
 
