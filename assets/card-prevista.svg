@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 210" width="1200" height="210" role="img" aria-label="Prevista: Founder · CII 2026 University Startups. Walk through your next home before you visit it: true-to-scale VR tours on Meta Quest 3, guided live by an agent.">
+<defs>
+  <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="#d9835a" stop-opacity=".32"/><stop offset=".6" stop-color="#d9835a" stop-opacity="0"/></radialGradient>
+  <linearGradient id="sheen" x1="0" x2="1"><stop offset="0" stop-color="#d9835a" stop-opacity="0"/><stop offset=".5" stop-color="#d9835a"/><stop offset="1" stop-color="#d9835a" stop-opacity="0"/></linearGradient>
+  <clipPath id="c"><rect width="1200" height="210" rx="20"/></clipPath>
+</defs>
+<style>
+  .t { font: 800 30px -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #e8edf5; }
+  .b { font: 600 13px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #d9835a; letter-spacing: .5px; }
+  .d { font: 400 16px -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #c3ccda; }
+  .chip { fill: #d9835a; fill-opacity: .12; stroke: #d9835a; stroke-opacity: .4; }
+  .ct { font: 500 12px -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #e8edf5; }
+  .sheen { animation: sweep 5s ease-in-out infinite; } @keyframes sweep { from { transform: translateX(-1200px); } to { transform: translateX(1200px); } }
+  .pulse { animation: pulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes pulse { 50% { transform: scale(1.6); opacity: .35; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<g clip-path="url(#c)">
+  <rect width="1200" height="210" fill="#0a0e17"/>
+  <rect width="1200" height="210" fill="url(#glow)"/>
+  <rect class="sheen" y="0" width="1200" height="3" fill="url(#sheen)"/>
+  <circle class="pulse" cx="1166" cy="34" r="6" fill="#d9835a"/>
+  <text x="28" y="52" class="b">FOUNDER · CII 2026 UNIVERSITY STARTUPS</text>
+  <text x="28" y="88" class="t">Prevista</text>
+  <text x="28" y="118" class="d">Walk through your next home before you visit it: true-to-scale VR tours on Meta Quest 3, guided live</text><text x="28" y="142" class="d">by an agent.</text>
+  <g transform="translate(28 158)"><rect width="104" height="26" rx="13" class="chip"/><text x="52" y="17.5" text-anchor="middle" class="ct">Meta Quest 3</text></g><g transform="translate(140 158)"><rect width="60" height="26" rx="13" class="chip"/><text x="30" y="17.5" text-anchor="middle" class="ct">OpenXR</text></g><g transform="translate(207 158)"><rect width="67" height="26" rx="13" class="chip"/><text x="34" y="17.5" text-anchor="middle" class="ct">Blender</text></g><g transform="translate(282 158)"><rect width="147" height="26" rx="13" class="chip"/><text x="74" y="17.5" text-anchor="middle" class="ct">Live agent control</text></g>
+  <rect x=".5" y=".5" width="1199" height="209" rx="20" fill="none" stroke="#ffffff" stroke-opacity=".1"/>
+</g>
+</svg>

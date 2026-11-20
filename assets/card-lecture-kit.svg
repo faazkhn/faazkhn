@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 590 250" width="590" height="250" role="img" aria-label="Lecture Revision Kit: UGREEN Hackathon 2026 on AI NAS. Recordings, slides and board photos in, sourced revision notes out, all on a home AI NAS.">
+<defs>
+  <radialGradient id="glow" cx="1" cy="0" r="1"><stop offset="0" stop-color="#39d98a" stop-opacity=".32"/><stop offset=".6" stop-color="#39d98a" stop-opacity="0"/></radialGradient>
+  <linearGradient id="sheen" x1="0" x2="1"><stop offset="0" stop-color="#39d98a" stop-opacity="0"/><stop offset=".5" stop-color="#39d98a"/><stop offset="1" stop-color="#39d98a" stop-opacity="0"/></linearGradient>
+  <clipPath id="c"><rect width="590" height="250" rx="20"/></clipPath>
+</defs>
+<style>
+  .t { font: 800 30px -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #e8edf5; }
+  .b { font: 600 13px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #39d98a; letter-spacing: .5px; }
+  .d { font: 400 16px -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #c3ccda; }
+  .chip { fill: #39d98a; fill-opacity: .12; stroke: #39d98a; stroke-opacity: .4; }
+  .ct { font: 500 12px -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif; fill: #e8edf5; }
+  .sheen { animation: sweep 5s ease-in-out infinite; } @keyframes sweep { from { transform: translateX(-590px); } to { transform: translateX(590px); } }
+  .pulse { animation: pulse 2.4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes pulse { 50% { transform: scale(1.6); opacity: .35; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<g clip-path="url(#c)">
+  <rect width="590" height="250" fill="#0a0e17"/>
+  <rect width="590" height="250" fill="url(#glow)"/>
+  <rect class="sheen" y="0" width="590" height="3" fill="url(#sheen)"/>
+  <circle class="pulse" cx="556" cy="34" r="6" fill="#39d98a"/>
+  <text x="28" y="52" class="b">UGREEN HACKATHON 2026 ON AI NAS</text>
+  <text x="28" y="88" class="t">Lecture Revision Kit</text>
+  <text x="28" y="118" class="d">Recordings, slides and board photos in, sourced revision</text><text x="28" y="142" class="d">notes out, all on a home AI NAS.</text>
+  <g transform="translate(28 198)"><rect width="126" height="26" rx="13" class="chip"/><text x="63" y="17.5" text-anchor="middle" class="ct">Agent workflows</text></g><g transform="translate(162 198)"><rect width="118" height="26" rx="13" class="chip"/><text x="59" y="17.5" text-anchor="middle" class="ct">Speech to text</text></g><g transform="translate(288 198)"><rect width="38" height="26" rx="13" class="chip"/><text x="19" y="17.5" text-anchor="middle" class="ct">OCR</text></g><g transform="translate(334 198)"><rect width="82" height="26" rx="13" class="chip"/><text x="41" y="17.5" text-anchor="middle" class="ct">On-device</text></g>
+  <rect x=".5" y=".5" width="589" height="249" rx="20" fill="none" stroke="#ffffff" stroke-opacity=".1"/>
+</g>
+</svg>
