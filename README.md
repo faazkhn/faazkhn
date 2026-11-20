@@ -1,7 +1,5 @@
 <a href="https://faazkhan.in"><img src="assets/hero.svg" width="100%" alt="Faaz Khan Mohammad: I build AI systems you can audit."></a>
 
-<p align="center"><img src="assets/typing.svg?v=2" width="100%" alt="Building Rapport, an AI patient whose mind is code you can read"></p>
-
 <p align="center">
   <a href="https://faazkhan.in"><img src="https://img.shields.io/badge/faazkhan.in-0a0e17?style=for-the-badge&logo=googlechrome&logoColor=3fd6bd" alt="Website"></a>
   <a href="https://www.linkedin.com/in/faazkhn/"><img src="https://img.shields.io/badge/LinkedIn-0a0e17?style=for-the-badge&logo=linkedin&logoColor=3fd6bd" alt="LinkedIn"></a>
