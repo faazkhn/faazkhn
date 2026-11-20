@@ -97,7 +97,7 @@ def typing():
                                    (i * per + 4.8) / T * 100)
         steps = len(ln)
         css.append(f"""@keyframes t{i} {{ 0%, {a:.2f}% {{ width: 0; opacity: 1; }} {type_end:.2f}% {{ width: {w + 2:.0f}px; }}
-          {hold:.2f}% {{ width: {w + 2:.0f}px; opacity: 1; }} {gone:.2f}%, 100% {{ width: {w + 2:.0f}px; opacity: 0; }} }}
+          {hold:.2f}% {{ width: {w + 2:.0f}px; opacity: 1; }} {gone:.2f}%, 100% {{ width: 0; }} }}
         @keyframes c{i} {{ 0% {{ opacity: 0; }} {max(a - 0.01, 0):.2f}% {{ opacity: 0; transform: translateX(0); }} {a:.2f}% {{ transform: translateX(0); opacity: 1; }} {type_end:.2f}% {{ transform: translateX({w + 4:.0f}px); }}
           {hold:.2f}% {{ transform: translateX({w + 4:.0f}px); opacity: 1; }} {gone:.2f}%, 100% {{ opacity: 0; transform: translateX({w + 4:.0f}px); }} }}
         .r{i} {{ animation: t{i} {T}s infinite; animation-timing-function: steps({steps}, end); width: 0; }}

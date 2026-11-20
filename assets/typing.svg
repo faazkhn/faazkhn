@@ -2,27 +2,27 @@
 <style>
   .t { font: 500 22px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #3fd6bd; }
   @keyframes t0 { 0%, 0.00% { width: 0; opacity: 1; } 8.00% { width: 834px; }
-          16.80% { width: 834px; opacity: 1; } 19.20%, 100% { width: 834px; opacity: 0; } }
+          16.80% { width: 834px; opacity: 1; } 19.20%, 100% { width: 0; } }
         @keyframes c0 { 0% { opacity: 0; } 0.00% { opacity: 0; transform: translateX(0); } 0.00% { transform: translateX(0); opacity: 1; } 8.00% { transform: translateX(836px); }
           16.80% { transform: translateX(836px); opacity: 1; } 19.20%, 100% { opacity: 0; transform: translateX(836px); } }
         .r0 { animation: t0 25.0s infinite; animation-timing-function: steps(63, end); width: 0; }
         .k0 { animation: c0 25.0s infinite; animation-timing-function: steps(63, end); opacity: 0; }@keyframes t1 { 0%, 20.00% { width: 0; opacity: 1; } 28.00% { width: 675px; }
-          36.80% { width: 675px; opacity: 1; } 39.20%, 100% { width: 675px; opacity: 0; } }
+          36.80% { width: 675px; opacity: 1; } 39.20%, 100% { width: 0; } }
         @keyframes c1 { 0% { opacity: 0; } 19.99% { opacity: 0; transform: translateX(0); } 20.00% { transform: translateX(0); opacity: 1; } 28.00% { transform: translateX(677px); }
           36.80% { transform: translateX(677px); opacity: 1; } 39.20%, 100% { opacity: 0; transform: translateX(677px); } }
         .r1 { animation: t1 25.0s infinite; animation-timing-function: steps(51, end); width: 0; }
         .k1 { animation: c1 25.0s infinite; animation-timing-function: steps(51, end); opacity: 0; }@keyframes t2 { 0%, 40.00% { width: 0; opacity: 1; } 48.00% { width: 702px; }
-          56.80% { width: 702px; opacity: 1; } 59.20%, 100% { width: 702px; opacity: 0; } }
+          56.80% { width: 702px; opacity: 1; } 59.20%, 100% { width: 0; } }
         @keyframes c2 { 0% { opacity: 0; } 39.99% { opacity: 0; transform: translateX(0); } 40.00% { transform: translateX(0); opacity: 1; } 48.00% { transform: translateX(704px); }
           56.80% { transform: translateX(704px); opacity: 1; } 59.20%, 100% { opacity: 0; transform: translateX(704px); } }
         .r2 { animation: t2 25.0s infinite; animation-timing-function: steps(53, end); width: 0; }
         .k2 { animation: c2 25.0s infinite; animation-timing-function: steps(53, end); opacity: 0; }@keyframes t3 { 0%, 60.00% { width: 0; opacity: 1; } 68.00% { width: 754px; }
-          76.80% { width: 754px; opacity: 1; } 79.20%, 100% { width: 754px; opacity: 0; } }
+          76.80% { width: 754px; opacity: 1; } 79.20%, 100% { width: 0; } }
         @keyframes c3 { 0% { opacity: 0; } 59.99% { opacity: 0; transform: translateX(0); } 60.00% { transform: translateX(0); opacity: 1; } 68.00% { transform: translateX(756px); }
           76.80% { transform: translateX(756px); opacity: 1; } 79.20%, 100% { opacity: 0; transform: translateX(756px); } }
         .r3 { animation: t3 25.0s infinite; animation-timing-function: steps(57, end); width: 0; }
         .k3 { animation: c3 25.0s infinite; animation-timing-function: steps(57, end); opacity: 0; }@keyframes t4 { 0%, 80.00% { width: 0; opacity: 1; } 88.00% { width: 622px; }
-          96.80% { width: 622px; opacity: 1; } 99.20%, 100% { width: 622px; opacity: 0; } }
+          96.80% { width: 622px; opacity: 1; } 99.20%, 100% { width: 0; } }
         @keyframes c4 { 0% { opacity: 0; } 79.99% { opacity: 0; transform: translateX(0); } 80.00% { transform: translateX(0); opacity: 1; } 88.00% { transform: translateX(624px); }
           96.80% { transform: translateX(624px); opacity: 1; } 99.20%, 100% { opacity: 0; transform: translateX(624px); } }
         .r4 { animation: t4 25.0s infinite; animation-timing-function: steps(47, end); width: 0; }
